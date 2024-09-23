@@ -1,7 +1,20 @@
 import './App.css';
-import {initBackButton, parseInitData} from '@telegram-apps/sdk';
+import {initBackButton, parseInitData, request} from '@telegram-apps/sdk';
 import {SDKProvider} from "@telegram-apps/sdk-react";
 import Header from "./components/header";
+
+const buttonId = await request({
+    method: 'web_app_open_popup',
+    event: 'popup_closed',
+    params: {
+        title: 'Caution',
+        message: 'Should we delete you account?',
+        buttons: [
+            { id: 'yes', type: 'ok' },
+            { id: 'no', type: 'cancel' },
+        ],
+    },
+});
 
 function App() {
     const [backButton] = initBackButton();
@@ -9,6 +22,11 @@ function App() {
     url = new URLSearchParams(url)
     url = url.get("tgWebAppData")
     console.log(url)
+    buttonId.then((id) => {
+        if (id === 'yes') {
+            console.log('yes')
+        }
+    })
 
 
     const initDataString = url
@@ -19,7 +37,6 @@ function App() {
             <Header username={"@"+initData.user.username}/>
             <div>My application!</div>
             <span>{initData.user.firstName}</span>
-            <span>{JSON.stringify(initData, null, 4)}</span>
         </SDKProvider>
     );
 }

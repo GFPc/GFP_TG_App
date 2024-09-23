@@ -1,17 +1,23 @@
 .header{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     background-color: #282c34;
     color: white;
     padding: 0 10px;
+    height:50px
+
 }
-.header .data span{
+.header .data{
+    margin-right: 20px;
+}
+.header .data .username{
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     margin-left: 10px;
     font-family: "Open Sans", sans-serif;
 }
+
 .header .menu-icon{
     cursor: pointer;
     height: 30px;
@@ -20,10 +26,34 @@
     align-items: center;
     justify-content: center;
 }
-.header .menu-content a{
+
+
+.header-wrapper .menu-content{
+    display: inline-block;
+    background: black;
+    border-radius: 10px;
+}
+.header-wrapper .menu-content .link a{
     color: white;
     text-decoration: none;
-    margin: 0 10px;
     font-family: "Open Sans", sans-serif;
     display: block;
+
+}
+.header-wrapper .menu-content .link{
+    display: block;
+    padding: 10px;
+    background: #282c34;
+    border-radius: 10px;
+    margin:10px
+}
+.header-wrapper .menu-screen{
+    position: absolute;
+    z-index: 1;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
