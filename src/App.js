@@ -10,6 +10,7 @@ function App() {
     url = new URLSearchParams(url)
     url = url.get("tgWebAppData")
     console.log(url)
+    backButton.show()
 
 
     const initDataString = url
