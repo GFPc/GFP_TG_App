@@ -4,8 +4,8 @@ import {SDKProvider} from "@telegram-apps/sdk-react";
 
 function App() {
     const [backButton] = initBackButton();
-    const url = new URL(window.location.href);
-    const initDataString = url.searchParams.get('#tgWebAppData')
+    const initDataString = decodeURIComponent(window.location.href.split("#tgWebAppData=")[1])
+    if(!initDataString) return <div>Not found initData</div>;
     console.log(initDataString);
     const initData = parseInitData(initDataString);
     backButton.show();
