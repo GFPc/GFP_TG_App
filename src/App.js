@@ -15,7 +15,7 @@ function App() {
         <SDKProvider acceptCustomStyles debug>
             <div>My application!</div>
             <span>{initData.user.firstName}</span>
-            <span>{JSON.stringify(initData.user)}</span>
+            <span>{JSON.stringify(initData.user, null, 4)}</span>
         </SDKProvider>
     );
 }
