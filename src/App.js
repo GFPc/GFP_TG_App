@@ -1,11 +1,10 @@
 import './App.css';
-import {initBackButton, parseInitData, request} from '@telegram-apps/sdk';
+import {initBackButton, parseInitData, } from '@telegram-apps/sdk';
 import {SDKProvider} from "@telegram-apps/sdk-react";
 import Header from "./components/header";
 
 
 function App() {
-    let tg = window.Telegram.WebApp;
     const [backButton] = initBackButton();
     var url = window.location.href.split("#")[1];
     url = new URLSearchParams(url)
@@ -20,9 +19,7 @@ function App() {
     return (
         <SDKProvider acceptCustomStyles debug>
             <Header username={"@"+initData.user.username}/>
-            <div onClick={ () => {
-                tg.sendData("some string that we need to send");
-            }}>My application!</div>
+            <div>My application!</div>
             <span>{initData.user.firstName}</span>
         </SDKProvider>
     );
