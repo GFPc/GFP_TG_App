@@ -1,0 +1,29 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #282c34;
+    color: white;
+    padding: 0 10px;
+}
+.header .data span{
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10px;
+    font-family: "Open Sans", sans-serif;
+}
+.header .menu-icon{
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header .menu-content a{
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-family: "Open Sans", sans-serif;
+    display: block;
+}
