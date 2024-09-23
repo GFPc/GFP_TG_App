@@ -19,7 +19,7 @@ function App() {
             <Header username={"@"+initData.user.username}/>
             <div>My application!</div>
             <span>{initData.user.firstName}</span>
-            <span>{JSON.stringify(initData.user, null, 4)}</span>
+            <span>{JSON.stringify(initData, null, 4)}</span>
         </SDKProvider>
     );
 }
